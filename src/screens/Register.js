@@ -8,79 +8,34 @@ export default Register = ({navigation}) => {
  
   return (
     <Container>
-      <H2>Signup</H2>
-      <Row>
-        <Column style={{flex: .5}}>
-            <Label>First Name</Label>
-            <Input
-            placeholder='John' />
-        </Column>
-
-        <Column style={{flex: .5}}>
-            <Label>Last Name</Label>
-            <Input
-            placeholder='Doe' />
-        </Column>
-        
-      </Row>
-
-      <Row>
-        <Column style={{flex: .5}}>
-            <Label>Country</Label>
-            <Select>
-        <SelectItem title='Option 1' />
-        <SelectItem title='Option 2' />
-        <SelectItem title='Option 3' />
-             </Select>
-        </Column>
-
-        <Column style={{flex: .5}}>
-            <Label>Phone Number</Label>
-            <Input
-            placeholder='889466646' />
-        </Column>
-        
-      </Row>
+      <H2>Sign Up To FLETL Baseball</H2>
       <Row>
         <Column style={{flex: 1}}>
-        <Label>Email</Label>
             <Input 
-             placeholder='johndoe@gmail.com'
+             placeholder='Enter Full Name'
            />
         </Column>
       </Row>
       <Row>
         <Column style={{flex: 1}}>
-        <Label>Password</Label>
         <Input
-         secureTextEntry={true}
-        placeholder='Enter 6 characters or more' 
+          placeholder='Enter Email' 
            />
         </Column>
       </Row>
       <Row>
         <Column style={{flex: 1}}>
-        <Label>Enter Referal Code</Label>
-            <Input 
-            placeholder='Enter Referal Code or more(Optional)'
-           />
+          <Input 
+          secureTextEntry={true}
+          placeholder='*********'
+          />
         </Column>
       </Row>
-      <Row>
-        <Column style = {{flex : 1}}>
-        <CheckBox
-        status='basic'
-        checked={true}
-        
-      >
-        <P>By Continuing you agree to our </P><Text style = {{color : 'red' , textDecorationLine : 'underline'}}>Terms of services</Text>
-      </CheckBox>
-        </Column>
-      </Row>
+      
       <Row>
         <Column style={{flex: 1}}>
             <Button
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.navigate('OTP',{otpType:'signup'})}
             >
                 <Text>SIGN UP</Text>
             </Button>

@@ -8,6 +8,11 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import * as eva from '@eva-design/eva';
 import customTheme from './theme';
+import SignupOptions from './src/screens/SignupOptions';
+import SigninOptions from './src/screens/SigninOptions';
+import OtpVerification from './src/screens/OtpVerification';
+import VerificationSuccessful from './src/screens/VerificationSuccessful';
+
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -34,8 +39,12 @@ function App() {
               headerShown: false
             }}
           />
+          <Stack.Screen name='SignupOption' component={SignupOptions}/>
+          <Stack.Screen name='SigninOption' component={SigninOptions}/>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
+          <Stack.Screen name="OTP" component={OtpVerification} />
+          <Stack.Screen name="OTPConfirmation" component={VerificationSuccessful} />
         </Stack.Navigator>
       </NavigationContainer>
     </ApplicationProvider>
