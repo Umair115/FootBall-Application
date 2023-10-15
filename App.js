@@ -12,6 +12,9 @@ import SignupOptions from './src/screens/SignupOptions';
 import SigninOptions from './src/screens/SigninOptions';
 import OtpVerification from './src/screens/OtpVerification';
 import VerificationSuccessful from './src/screens/VerificationSuccessful';
+import RecoverPassword from './src/screens/RecoverPassword';
+import SetupNewPassword from './src/screens/SetupNewPassword'
+import RecoverPasswordOtp from './src/screens/RecoverPasswordOtp';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,7 +47,11 @@ function App() {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="OTP" component={OtpVerification} />
-          <Stack.Screen name="OTPConfirmation" component={VerificationSuccessful} />
+          <Stack.Screen name="OTPConfirmation" component={VerificationSuccessful} options={{ headerShown: false }} />
+          <Stack.Screen name="RecoverPassword" component={RecoverPassword} />
+          <Stack.Screen name="SetupNewPassword" component={SetupNewPassword} />
+          <Stack.Screen name="RecoverPasswordOtp" component={RecoverPasswordOtp} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </ApplicationProvider>

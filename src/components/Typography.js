@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import {Layout, Text} from '@ui-kitten/components';
+import styles from '../theme'
 
 const H1 = ({ children, style, ...props }) => {
     return (
@@ -12,7 +13,7 @@ const H1 = ({ children, style, ...props }) => {
 
 const H2 = ({ children, style, ...props }) => {
   return (
-    <Text category='h2' style={{ marginBottom: 10 }} {...props}>
+    <Text category='h2' style={styles.heading} {...props}>
         {children}
     </Text>
   );
@@ -28,7 +29,7 @@ const H3 = ({ children, style, ...props }) => {
 
 const P = ({ children, style, ...props }) => {
     return (
-        <Text category='p1' style={{ marginBottom: 5 }} {...props}>
+        <Text category='p1' style={styles.text} {...props}>
             {children}
         </Text>
     );

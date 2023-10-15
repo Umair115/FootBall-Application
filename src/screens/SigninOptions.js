@@ -3,6 +3,8 @@ import {StyleSheet, Image } from 'react-native';
 import {Layout, Text, Button, Input , CheckBox , checked  ,placeholder , Select, SelectItem} from '@ui-kitten/components';
 import { Column, Row, Container } from '../components/Grid';
 import { H2, P, Label } from '../components/Typography';
+import LinearGradientButton from '../components/LinearGradientButton'
+import styles from '../theme'
 
 export default SignupOptions = ({navigation}) => {
  
@@ -11,7 +13,7 @@ export default SignupOptions = ({navigation}) => {
       <Row style={{flex:0.6}}>
         <Column>
             <Image
-                source={require('../assets/images/fletl_logo.png')} // Adjust path as needed
+                source={require('../assets/images/fletl_logo.png')}
                 style={{ width: 300, height: 300, alignSelf: 'center', top:30 }}
                 resizeMode="cover"
             />
@@ -19,22 +21,22 @@ export default SignupOptions = ({navigation}) => {
       </Row>
       <Row style={{flex:0.1, justifyContent:'center', alignItems:'center'}}>
         <Column>
-            <Button>Coach</Button>
+        <LinearGradientButton title="Coach" onPress={() => navigation.navigate('Register')} />
         </Column>
       </Row>
       <Row style={{flex:0.1, justifyContent:'center', alignItems:'center'}}>
         <Column>
-            <Button>Team</Button>
+        <LinearGradientButton title="Team" onPress={() => navigation.navigate('Register')} />
         </Column>
       </Row>
       <Row style={{flex:0.1, justifyContent:'center', alignItems:'center'}}>
         <Column style={{flex:1,justifyContent:'center', alignItems:'center'}}>
-            <Text>OR</Text>
+        <Text style={styles.paragraph}>OR</Text>
         </Column>
       </Row>
       <Row style={{flex:0.1, justifyContent:'center', alignItems:'center'}}>
         <Column>
-            <Button>Player</Button>
+        <LinearGradientButton title="Player" onPress={() => navigation.navigate('Register')} />
         </Column>
       </Row>
     </Container>
