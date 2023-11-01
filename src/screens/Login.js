@@ -9,6 +9,13 @@ import themecolor from '../themecolors';
 
 export default Login = ({navigation}) => {
   
+  const EmailIcon = (props) => (
+    <Icon name='close-circle-outline' {...props} />
+  )
+
+  const PasswordIcon = (props) => (
+    <Icon name='eye-off-outline' {...props} />
+  )
 
   return (
     <Container>
@@ -17,8 +24,9 @@ export default Login = ({navigation}) => {
         <Column style={{flex: 1}}>
             <Input 
             style={styles.inputField} 
-            secureTextEntry={true}
-            placeholder='Enter Email'  />
+            placeholder='Enter Email'  
+            accessoryRight={EmailIcon}
+            />
         </Column>
       </Row>
       <Row>
@@ -26,8 +34,8 @@ export default Login = ({navigation}) => {
             <Input
             style={styles.inputField} 
             secureTextEntry={true}
-            placeholder='********'
-            // accessoryRight={renderIcon}
+            placeholder='Enter Password'
+            accessoryRight={PasswordIcon}
             />
         </Column>
       </Row>
@@ -40,7 +48,7 @@ export default Login = ({navigation}) => {
 
       <Row>
         <Column>
-            <LinearGradientButton title="Login"
+            <LinearGradientButton title="Sign In"
                 onPress={() => navigation.navigate('OTP',{otpType:'signin'})}
           />
         </Column>

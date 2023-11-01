@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Image, TextInput, View } from 'react-native';
+import { StyleSheet, Image, TextInput, View, ImageBackground } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { Column, Row, Container } from '../components/Grid';
 import LinearGradientButton from '../components/LinearGradientButton';
@@ -23,41 +23,47 @@ const OtpVerification = ({ navigation, route }) => {
       navigation.navigate('VerificationSuccessful', { otpType, otpCode });
     }
   };
-
   return (
     <Container>
       <Row>
         <Column>
           <Image
             source={require('../assets/images/Illustration1.png')}
-            style={{ width: 400, height: 300, top: 0, left: 0, right: 0, bottom: 0 }}
+            style={styles.illustrationImage}
             resizeMode="cover"
           />
         </Column>
       </Row>
 
-      <Row style={{ flexDirection: 'column', marginTop: 0, paddingTop: 0, textAlign: 'right' }}>
-        <Text style={styles.heading}>{otpType == 'signup' ? 'Sign Up' : 'Sign In'}</Text>
-        <Text>Please enter OTP to continue.</Text>
+      <Row style={styles.IllustrationText}>
+        <Text style={[styles.heading, { marginBottom: 5 }]}>
+          {otpType == 'signup' ? 'Sign Up' : otpType === 'recover' ? 'Recover Password' : 'Sign In'}
+        </Text>
+        <Text>Please Type OTP to continue.</Text>
         <Text>Enter Your OTP Code here</Text>
       </Row>
 
-      <Row style={{ flex: 0.3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-      {otpDigits.map((digit, index) => (
+      <Row style={{ flex: 0.8, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        {otpDigits.map((digit, index) => (
           <View key={index} style={styles.otpDigitContainer}>
-            <Text style={styles.otpDigitText}>{digit}</Text>
+            <TextInput
+              style={styles.otpDigitText}
+              value={digit}
+              onChangeText={(text) => handleOtpInputChange(index, text)}
+              keyboardType="numeric"
+            />
           </View>
         ))}
       </Row>
 
 
       <Row>
-        <Column style={{flex: 1}}>
-        <LinearGradientButton title="Verify OTP" onPress={() => navigation.navigate('OTPConfirmation', { otpType })} />
-     </Column>
+        <Column style={{ flex: 1 }}>
+          <LinearGradientButton title="Verify OTP" onPress={() => navigation.navigate('OTPConfirmation', { otpType })} />
+        </Column>
       </Row>
 
-      <Row style={{ flex: 0.4, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <Row style={{ flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <Text style={styles.text}>I did not receive the code</Text>
         <Text
           style={[styles.text, { color: themecolor.primaryColor, fontWeight: 'bold' }]}

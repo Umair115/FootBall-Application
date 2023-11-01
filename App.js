@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ApplicationProvider, Layout, Text, Button } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry, Layout, Text, Button } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+
 // screens
 import Splash from './src/screens/Splash';
 import Login from './src/screens/Login';
@@ -14,48 +16,50 @@ import OtpVerification from './src/screens/OtpVerification';
 import VerificationSuccessful from './src/screens/VerificationSuccessful';
 import RecoverPassword from './src/screens/RecoverPassword';
 import SetupNewPassword from './src/screens/SetupNewPassword'
-import RecoverPasswordOtp from './src/screens/RecoverPasswordOtp';
+import ResetPassword from './src/screens/ResetPassword';
+
 
 const Stack = createNativeStackNavigator();
 
 function App() {
 
   return (
-
-  <ApplicationProvider {...eva} theme={customTheme}>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerBackTitle: '',
-            headerTitle: '',
-            headerTintColor: '#000',
-            headerShadowVisible: false,
-            headerStyle: {
-              backgroundColor: 'white',
-            }
-          }}
-        >
-          <Stack.Screen 
+    <>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={customTheme}>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerBackTitle: '',
+              headerTitle: '',
+              headerTintColor: '#000',
+              headerShadowVisible: false,
+              headerStyle: {
+                backgroundColor: 'white',
+              }
+            }}
+          >
+            <Stack.Screen 
             name="Splash" 
             component={Splash} 
             options={{
               headerShown: false
             }}
           />
-          <Stack.Screen name='SignupOption' component={SignupOptions}/>
-          <Stack.Screen name='SigninOption' component={SigninOptions}/>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Register" component={Register} />
-          <Stack.Screen name="OTP" component={OtpVerification} />
-          <Stack.Screen name="OTPConfirmation" component={VerificationSuccessful} options={{ headerShown: false }} />
-          <Stack.Screen name="RecoverPassword" component={RecoverPassword} />
-          <Stack.Screen name="SetupNewPassword" component={SetupNewPassword} />
-          <Stack.Screen name="RecoverPasswordOtp" component={RecoverPasswordOtp} />
-          
-        </Stack.Navigator>
-      </NavigationContainer>
-    </ApplicationProvider>
-    
+            <Stack.Screen name='SignupOption' component={SignupOptions} />
+            <Stack.Screen name='SigninOption' component={SigninOptions} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="OTP" component={OtpVerification} options={{ headerShown: false }} />
+            <Stack.Screen name="OTPConfirmation" component={VerificationSuccessful} options={{ headerShown: false }} />
+            <Stack.Screen name="RecoverPassword" component={RecoverPassword} />
+            <Stack.Screen name="SetupNewPassword" component={SetupNewPassword} />
+            <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ headerShown: false }} />
+
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ApplicationProvider>
+    </>
   );
 }
 export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet } from 'react-native';
-import {Layout, Text, Button, Input , CheckBox , checked  ,placeholder , Select, SelectItem} from '@ui-kitten/components';
+import {Layout, Text, Button, Input , Icon,CheckBox , checked  ,placeholder , Select, SelectItem} from '@ui-kitten/components';
 import { Column, Row, Container } from '../components/Grid';
 import { H2, P, Label } from '../components/Typography';
 import LinearGradientButton from '../components/LinearGradientButton'
@@ -8,7 +8,14 @@ import styles from '../theme'
 import themecolor from '../themecolors';
 
 export default Register = ({navigation}) => {
- 
+  const EmailIcon = (props) => (
+    <Icon name='close-circle-outline' {...props} />
+  )
+
+  const PasswordIcon = (props) => (
+    <Icon name='eye-off-outline' {...props} />
+  )
+
   return (
     <Container>
       <H2>Sign Up To FLETL Baseball</H2>
@@ -17,6 +24,7 @@ export default Register = ({navigation}) => {
             <Input 
             style={styles.inputField}
              placeholder='Enter Full Name'
+             accessoryRight={EmailIcon}
            />
         </Column>
       </Row>
@@ -25,6 +33,7 @@ export default Register = ({navigation}) => {
         <Input
          style={styles.inputField}
           placeholder='Enter Email' 
+          accessoryRight={EmailIcon}
            />
         </Column>
       </Row>
@@ -34,6 +43,7 @@ export default Register = ({navigation}) => {
            style={styles.inputField}
           secureTextEntry={true}
           placeholder='*********'
+          accessoryRight={PasswordIcon}
           />
         </Column>
       </Row>

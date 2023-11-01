@@ -65,24 +65,41 @@ export default styles = StyleSheet.create({
         borderWidth: 0,
     },
     otpDigitContainer: {
-        width: 40,
-        height: 40,
-        backgroundColor: '#F0F0F0', // Use your desired gray background color
+        width: 80,
+        height: 70,
+        backgroundColor: '#F0F0F0', 
         borderRadius: 8,
         margin: 5,
         justifyContent: 'center',
         alignItems: 'center',
       },
       otpDigitText: {
-        color: '#000', // Use your desired text color
+        color: '#000', 
         fontSize: 20,
       },
       inputContainer: {
         width: '80%',
-        backgroundColor: '#F0F0F0', // Use your desired gray background color
+        backgroundColor: '#F0F0F0',
         borderRadius: 8,
         marginTop: 10,
         marginBottom: 10,
+      },
+      illustrationImage:{
+        width:440,
+        height:500,
+        top:-15,
+        left:-10,
+        position:'absolute',
+      },
+      IllustrationText:{
+        flexDirection: 'column', 
+        alignItems:'flex-start',
+        marginTop:300 
+      },
+      scrollViewContent: {
+        flexGrow: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
       },
 });
 

@@ -16,20 +16,22 @@ export default VerificationSuccessful = ({navigation, route}) => {
         <Column>
             <Image
                 source={require('../assets/images/Illustration1.png')} 
-                style={{ width: 400, height: 300, alignSelf: 'center', top:30 }}
+                style={styles.illustrationImage}
                 resizeMode="cover"
             />
         </Column>
       </Row>
-      <Row style={{flexDirection:'col'}}>
-        <Text style={styles.heading}>{otpType == 'signup' ? "Sign Up" : 'Sign In'}</Text>
-        <Text style={styles.heading}>VerificationSuccessful</Text>
+      <Row style={styles.IllustrationText}>
+        <Text style={[styles.heading, { marginBottom: 5 }]}>
+        {otpType == 'signup' ? 'Sign Up' : otpType === 'recover' ? 'Recover Password' : 'Sign In'}
+        </Text>
+        <Text style={[styles.heading, { marginBottom: 5 }]}>VerificationSuccessful</Text>
         <Text>OTP verification Completed</Text>
         <Text>Click the button below to Continue Forward</Text>
       </Row>
       <Row style={{flexDirection:'col'}}>
       </Row>
-      <Row style={{flex:0.4,marginTop:80}}>
+      <Row style={{flex:0.4,marginTop:150}}>
         <Column style={{flex: 1}}>
        <LinearGradientButton  title="Continue" onPress={()=>{navigation.navigate('SigninOption')}}/>
        </Column>

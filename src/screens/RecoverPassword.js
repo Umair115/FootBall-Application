@@ -13,7 +13,7 @@ export default RecoverPassword = ({ navigation }) => {
 
     return (
         <Container>
-            <H2 >Sign In To FLETL BaseBall</H2>
+            <H2 >Recover Password?</H2>
             <Row>
                 <Column style={{ flex: 1 }}>
                     <Input
@@ -26,7 +26,7 @@ export default RecoverPassword = ({ navigation }) => {
             <Row>
                 <Column>
                     <LinearGradientButton title="Recover Password"
-                        onPress={() => navigation.navigate('RecoverPasswordOtp', { otpType: 'signin' })}
+                        onPress={() => navigation.navigate('OTP', { otpType: 'recover' })}
                     />
                 </Column>
             </Row>
