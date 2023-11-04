@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ApplicationProvider, IconRegistry, Layout, Text, Button } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import 'react-native-gesture-handler';
 
 // screens
 import Splash from './src/screens/Splash';
@@ -17,6 +18,9 @@ import VerificationSuccessful from './src/screens/VerificationSuccessful';
 import RecoverPassword from './src/screens/RecoverPassword';
 import SetupNewPassword from './src/screens/SetupNewPassword'
 import ResetPassword from './src/screens/ResetPassword';
+import DrawerNavigator from './src/components/CoachDrawerNavigator';
+import Profile from './src/screens/Profile';
+import HomeTeam from './src/screens/HomeTeam'
 
 
 const Stack = createNativeStackNavigator();
@@ -39,13 +43,13 @@ function App() {
               }
             }}
           >
-            <Stack.Screen 
+            {/* <Stack.Screen 
             name="Splash" 
             component={Splash} 
             options={{
               headerShown: false
             }}
-          />
+          /> */}
             <Stack.Screen name='SignupOption' component={SignupOptions} />
             <Stack.Screen name='SigninOption' component={SigninOptions} />
             <Stack.Screen name="Login" component={Login} />
@@ -55,6 +59,9 @@ function App() {
             <Stack.Screen name="RecoverPassword" component={RecoverPassword} />
             <Stack.Screen name="SetupNewPassword" component={SetupNewPassword} />
             <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ headerShown: false }} />
+            <Stack.Screen name="CoachDrawerNavigator" component={DrawerNavigator} />
+            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
+            <Stack.Screen name="Hometeam" component={HomeTeam} options={{ headerShown: false }}/>
 
           </Stack.Navigator>
         </NavigationContainer>

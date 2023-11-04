@@ -101,6 +101,46 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
       },
+      modal: {
+        position: 'absolute',
+        top: -20,
+        left: -20,
+        bottom: -20,
+        width: '75%',
+        backgroundColor: 'rgba(238, 247, 254, 1)', 
+      },
+      modalTop: {
+        borderBottomLeftRadius: 0, 
+        borderBottomRightRadius: 20, 
+        backgroundColor: 'white', 
+      },
+      modalHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+      },
+      userInfo: {
+        flex: 1,
+      },
+      username: {
+        fontSize: 20,
+        fontWeight: 'bold',
+      },
+      roleText: {
+        fontSize: 18,
+        marginTop: 8,
+      },
+      modalContent: {
+        padding: 16,
+      },
+      modalFooter: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+      },
+      logoutText: {
+        fontSize: 18,
+      },
 });
 
 export const secondaryButtonGradient = {
