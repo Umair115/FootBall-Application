@@ -80,16 +80,16 @@ const Profile = () => {
 
                 {/* recent chnage */}
 
-                
+
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={styles.headingBetween}>Recent Changes</Text>
-                
+                    <Text style={styles.headingBetween}>Recent Changes</Text>
+
                     <View style={styles.upDownIconContainer}>
                         <Icon name="arrow-upward-outline" fill="black" style={styles.upDownIcon} />
                         <Icon name="arrow-downward-outline" fill="black" style={styles.upDownIcon} />
                     </View>
-                    </View>
-                    <View style={styles.recentChangesContainer}>
+                </View>
+                <View style={styles.recentChangesContainer}>
                     <View style={styles.docxContainer}>
                         <View style={styles.docxCircle}>
                             <Icon name="file-text-outline" fill="blue" style={styles.docxIcon} />
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     },
     upDownIconContainer: {
         flexDirection: 'row',
-        marginRight:10
+        marginRight: 10
     },
     upDownIcon: {
         width: 24,
@@ -207,8 +207,8 @@ const styles = StyleSheet.create({
     },
     docxName: {
         fontSize: 14,
-        fontWeight:'bold',
-        color:'rgba(65, 65, 65, 1)'
+        fontWeight: 'bold',
+        color: 'rgba(65, 65, 65, 1)'
     },
     docxTime: {
         fontSize: 10,

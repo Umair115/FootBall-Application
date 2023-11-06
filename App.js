@@ -21,6 +21,7 @@ import ResetPassword from './src/screens/ResetPassword';
 import DrawerNavigator from './src/components/CoachDrawerNavigator';
 import Profile from './src/screens/Profile';
 import HomeTeam from './src/screens/HomeTeam'
+import Events from './src/screens/Events';
 
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,8 @@ function App() {
             <Stack.Screen name="CoachDrawerNavigator" component={DrawerNavigator} />
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
             <Stack.Screen name="Hometeam" component={HomeTeam} options={{ headerShown: false }}/>
+            <Stack.Screen name="Events" component={Events} options={{ headerShown: false }}/>
+
 
           </Stack.Navigator>
         </NavigationContainer>

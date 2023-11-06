@@ -67,80 +67,204 @@ export default styles = StyleSheet.create({
     otpDigitContainer: {
         width: 80,
         height: 70,
-        backgroundColor: '#F0F0F0', 
+        backgroundColor: '#F0F0F0',
         borderRadius: 8,
         margin: 5,
         justifyContent: 'center',
         alignItems: 'center',
-      },
-      otpDigitText: {
-        color: '#000', 
+    },
+    otpDigitText: {
+        color: '#000',
         fontSize: 20,
-      },
-      inputContainer: {
+    },
+    inputContainer: {
         width: '80%',
         backgroundColor: '#F0F0F0',
         borderRadius: 8,
         marginTop: 10,
         marginBottom: 10,
-      },
-      illustrationImage:{
-        width:440,
-        height:500,
-        top:-15,
-        left:-10,
-        position:'absolute',
-      },
-      IllustrationText:{
-        flexDirection: 'column', 
-        alignItems:'flex-start',
-        marginTop:300 
-      },
-      scrollViewContent: {
+    },
+    illustrationImage: {
+        width: 440,
+        height: 500,
+        top: -15,
+        left: -10,
+        position: 'absolute',
+    },
+    IllustrationText: {
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        marginTop: 300
+    },
+    scrollViewContent: {
         flexGrow: 1,
         justifyContent: 'center',
         alignItems: 'center',
-      },
-      modal: {
+    },
+
+    modal: {
         position: 'absolute',
-        top: -20,
-        left: -20,
-        bottom: -20,
+        margin: 0,
         width: '75%',
-        backgroundColor: 'rgba(238, 247, 254, 1)', 
-      },
-      modalTop: {
-        borderBottomLeftRadius: 0, 
-        borderBottomRightRadius: 20, 
-        backgroundColor: 'white', 
-      },
-      modalHeader: {
+        flexDirection:'column',
+        justifyContent:'space-between',
+        backgroundColor: 'rgba(238, 247, 254, 1)',
+        height: '100%',
+    },
+    modalTop: {
+        backgroundColor: 'white',
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 25,
+        alignItems: 'center',
+        paddingVertical: 16,
+    },
+    modalHeader: {
         flexDirection: 'row',
         alignItems: 'center',
         padding: 16,
-      },
-      userInfo: {
+    },
+    userInfo: {
         flex: 1,
-      },
-      username: {
+    },
+    username: {
         fontSize: 20,
         fontWeight: 'bold',
-      },
-      roleText: {
+    },
+    roleText: {
         fontSize: 18,
         marginTop: 8,
-      },
-      modalContent: {
+    },
+    modalContent: {
         padding: 16,
-      },
-      modalFooter: {
+    },
+    modalFooter: {
         flexDirection: 'row',
         alignItems: 'center',
         padding: 16,
-      },
-      logoutText: {
+    },
+    logoutText: {
         fontSize: 18,
-      },
+        marginLeft:5
+    },
+
+    teamFixture: {
+        flex: 1,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        elevation: 3,
+        marginBottom: 10,
+    },
+
+    circleImage: {
+        width: 37,
+        height: 37,
+        borderRadius: 25,
+    },
+
+    circle: {
+        width: 45,
+        height: 45,
+        borderRadius: 30,
+        backgroundColor: '#48cf5c',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    vsTextContainer: {
+        borderColor: 'rgba(238, 247, 254, 1)',
+        padding: 5,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 35,
+        borderWidth: 2,
+    },
+    vsText: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: 'grey',
+    },
+
+    teamName: {
+        fontSize: 14,
+        color: 'black',
+        fontWeight: '500',
+        marginLeft: 6
+    },
+    playerName: {
+        fontSize: 16,
+        marginLeft: 6,
+        fontSize: 14,
+        color: 'grey',
+        fontWeight: 'bold'
+    },
+    vsContainer: {
+        flexDirection: 'column',
+        marginHorizontal: 16,
+        marginVertical: 16,
+        marginBottom: 16,
+        justifyContent: 'space-between'
+    },
+    boxIcon: {
+        width: 20,
+        height: 20,
+    },
+    winnerImageContainer: {
+        position: 'relative',
+        borderRadius: 10,
+        marginHorizontal: 16,
+    },
+
+    winnerImage: {
+        width: '100%',
+        height: 230,
+        borderRadius: 10,
+        resizeMode: 'cover',
+    },
+    winnerElements: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    rightWinner: {
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingHorizontal: 16,
+        paddingVertical: 10,
+        flex: 1,
+    },
+    winnerText: {
+        fontSize: 20,
+        color: '#48cf5c',
+        fontWeight: '900',
+    },
+    teamText: {
+        fontSize: 22,
+        color: 'white',
+        fontWeight: '900'
+    },
+    ratingOval: {
+        borderRadius: 20,
+        backgroundColor: 'white',
+        paddingLeft: 6,
+        paddingRight: 6,
+        paddingTop: 2,
+        paddingBottom: 2
+    },
+    ovalText: {
+        fontSize: 10,
+        color: 'black',
+        fontWeight: '500'
+    }
 });
 
 export const secondaryButtonGradient = {
