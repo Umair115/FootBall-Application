@@ -136,6 +136,10 @@ export default styles = StyleSheet.create({
     },
     modalContent: {
         padding: 16,
+        marginLeft:10,
+    },
+    navigationModal:{
+        marginBottom:15,
     },
     modalFooter: {
         flexDirection: 'row',
@@ -189,10 +193,11 @@ export default styles = StyleSheet.create({
     },
 
     teamName: {
-        fontSize: 14,
+        fontSize: 10,
         color: 'black',
         fontWeight: '500',
-        marginLeft: 6
+        marginLeft: 6,
+        marginRight:6
     },
     playerName: {
         fontSize: 16,
@@ -264,7 +269,73 @@ export default styles = StyleSheet.create({
         fontSize: 10,
         color: 'black',
         fontWeight: '500'
-    }
+    },
+    headingTeamName: {
+        fontSize: 30,
+        color: 'white',
+        fontWeight: 'bold',
+      },
+      teamRanking: {
+        fontSize: 23,
+        color: 'white',
+        fontWeight: 'bold',
+      },
+      numberContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+      },
+      number: {
+        fontSize: 60,
+        color: 'orange',
+        fontWeight: '900',
+        marginTop:-12
+      },
+      imageTeamName: {
+        fontSize: 14,
+        color: 'white',
+        marginLeft: 8,
+        marginTop:30
+      },
+      statsBox: {
+        borderRadius: 10, // Curved corners
+        backgroundColor: 'white', // Background color of the box
+        padding: 16, // Padding inside the box
+        shadowColor: 'black', // Shadow color
+        shadowOffset: { width: 0, height: 2 }, 
+        shadowOpacity: 0.2,
+        elevation: 5,
+        marginHorizontal:16,
+        marginBottom:10
+      },
+      mediumHeading: {
+        fontSize: 18,
+        fontWeight: '500',
+        color: 'black',
+    },
+    eventsContainer: {
+        padding: 16,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        marginHorizontal: 16,
+    },
+    teamEventsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 1,
+    },
+    teamEventsText: {
+        fontSize: 10,
+        color: 'black',
+    },
+    seeMoreText: {
+        fontSize: 12,
+        color: 'black',
+    },
+    boxIcon: {
+        width: 20,
+        height: 20,
+    },
 });
 
 export const secondaryButtonGradient = {

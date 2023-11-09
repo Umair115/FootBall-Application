@@ -4,7 +4,7 @@ import { Icon, Avatar } from '@ui-kitten/components';
 import Modal from 'react-native-modal';
 import styles from '../theme'
 
-const DrawerNavigator = ({ isVisible, closeModal, navigation }) => {
+const TeamDrawerNavigator = ({ isVisible, closeModal, navigation }) => {
     return (
         <Modal isVisible={isVisible} style={styles.modal}>
             {/* Top part of the modal with curved background */}
@@ -23,16 +23,19 @@ const DrawerNavigator = ({ isVisible, closeModal, navigation }) => {
 
             {/* Main content area */}
             <View style={styles.modalContent}>
-                <Text onPress={() => navigation.navigate('Homecoach')} style={styles.navigationModal} >Home</Text>
+                <Text onPress={() => navigation.navigate('Hometeam')} style={styles.navigationModal} >Home</Text>
                 <Text style={styles.navigationModal}>Account</Text>
-                <Text onPress={() => navigation.navigate('Profile')} style={styles.navigationModal}>Profile</Text>
+                <Text onPress={() => navigation.navigate('Profileteam')} style={styles.navigationModal}>Profile</Text>
                 <Text style={styles.navigationModal}>History</Text>
-                       <Text style={styles.navigationModal}>Stats</Text>
-                <Text style={styles.navigationModal}>Team</Text>
+                <Text style={styles.navigationModal}>Stats</Text>
+                <Text style={styles.navigationModal}>Disvover Player</Text>
+                <Text style={styles.navigationModal}>Team Roatser</Text>
+                <Text style={styles.navigationModal}>List of Coaches</Text>
+                <Text onPress={() => navigation.navigate('Teamevents')} style={styles.navigationModal} >Events</Text>
+                <Text style={styles.navigationModal}>Manage Player</Text>
                 <Text style={styles.navigationModal}>Setting</Text>
                 <Text style={styles.navigationModal}>Help</Text>
-
-                        </View>
+            </View>
 
             {/* Logout section at the bottom */}
             <View style={styles.modalFooter}>
@@ -46,5 +49,4 @@ const DrawerNavigator = ({ isVisible, closeModal, navigation }) => {
     );
 };
 
-
-export default DrawerNavigator;
+export default TeamDrawerNavigator

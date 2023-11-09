@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image ,StyleSheet} from 'react-native';
 import { Icon } from '@ui-kitten/components';
 import styles from '../theme'
 
-const TeamFixtures = ({ fixtures,viewMoreText }) => {
+const TeamFixtures = ({ fixtures, viewMoreText }) => {
     return (
         <>
             <View style={styles.vsContainer}>

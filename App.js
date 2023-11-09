@@ -19,9 +19,15 @@ import RecoverPassword from './src/screens/RecoverPassword';
 import SetupNewPassword from './src/screens/SetupNewPassword'
 import ResetPassword from './src/screens/ResetPassword';
 import DrawerNavigator from './src/components/CoachDrawerNavigator';
-import Profile from './src/screens/Profile';
-import HomeTeam from './src/screens/HomeTeam'
-import Events from './src/screens/Events';
+import Profile from './src/screens/Coach/Profile';
+import HomeCoach from './src/screens/Coach/HomeCoach'
+import Events from './src/screens/Coach/Events';
+import Table from './src/screens/Coach/Table';
+import ProfileTeam from './src/screens/Team/ProfileTeam';
+import HomeTeam from './src/screens/Team/HomeTeam';
+import TeamEvents from './src/screens/Team/TeamEvents';
+import Tablesteam from './src/screens/Team/Tablesteam';
+import TeamDrawerNavigator from './src/components/TeamDrawerNavigator';
 
 
 const Stack = createNativeStackNavigator();
@@ -61,9 +67,22 @@ function App() {
             <Stack.Screen name="SetupNewPassword" component={SetupNewPassword} />
             <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ headerShown: false }} />
             <Stack.Screen name="CoachDrawerNavigator" component={DrawerNavigator} />
-            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
-            <Stack.Screen name="Hometeam" component={HomeTeam} options={{ headerShown: false }}/>
-            <Stack.Screen name="Events" component={Events} options={{ headerShown: false }}/>
+            <Stack.Screen name="TeamDrawerNavigator" component={TeamDrawerNavigator} />
+
+
+            {/* coach */}
+
+
+            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+            <Stack.Screen name="Homecoach" component={HomeCoach} options={{ headerShown: false }} />
+            <Stack.Screen name="Events" component={Events} options={{ headerShown: false }} />
+            <Stack.Screen name="Table" component={Table} options={{ headerShown: false }} />
+
+            {/* table */}
+            <Stack.Screen name="Profileteam" component={ProfileTeam} options={{ headerShown: false }} />
+            <Stack.Screen name="Hometeam" component={HomeTeam} options={{ headerShown: false }} />
+            <Stack.Screen name="Teamevents" component={TeamEvents} options={{ headerShown: false }} />
+            <Stack.Screen name="Tablesteam" component={Tablesteam} options={{ headerShown: false }} />
 
 
           </Stack.Navigator>

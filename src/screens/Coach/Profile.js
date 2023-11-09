@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import { Layout, Avatar, Icon } from '@ui-kitten/components';
-import CustomHeader from '../components/CustomHeader';
-import DrawerNavigator from '../components/CoachDrawerNavigator';
+import CoachHeader from '../../components/CoachHeader';
+import DrawerNavigator from '../../components/CoachDrawerNavigator';
+
+
+const boxData = [
+    { backgroundColor: 'rgba(238, 247, 254, 1)', iconFill: 'rgba(86, 125, 244, 1)', title: 'Team', subtitle: 'All Team Performance' },
+    { backgroundColor: 'rgba(255, 251, 236, 1)', iconFill: 'rgba(201, 164, 38, 1)', title: 'Players', subtitle: 'All Players Performance' },
+]
+
+const boxDataSecond = [
+    { backgroundColor: 'rgba(254, 238, 238, 1)', iconFill: 'rgba(244, 86, 86, 1)', title: 'Standings', subtitle: 'All Standings Performance' },
+    { backgroundColor: 'rgba(240, 255, 255, 1)', iconFill: 'rgba(52, 222, 222, 1)', title: 'Depth Charts', subtitle: 'All Depth Charts Performance' },
+]
+
+const recentChangesData = [
+    {  docxName: 'Called for training sessions.docx', docxTime: "Today's Match", time: '2 hrs' },
+    {  docxName: 'Called for training sessions.docx', docxTime: "Today's Match", time: '2 hrs' },
+];
 
 const Profile = () => {
     const [isModalVisible, setModalVisible] = useState(false);
@@ -13,14 +29,14 @@ const Profile = () => {
 
     return (
         <Layout style={styles.container}>
-            <CustomHeader title="My Profile" toggleModal={toggleModal} />
+            <CoachHeader title="My Profile" toggleModal={toggleModal} />
 
             <ScrollView>
                 {/* User Information Box */}
                 <View style={styles.userInfoContainer}>
                     <View style={styles.userInfoBox}>
                         <Avatar
-                            source={require('../assets/images/avatar.png')}
+                            source={require('../../assets/images/avatar.png')}
                             size="giant"
                         />
                         <Text style={styles.username}>Billy Tucker</Text>
@@ -37,46 +53,32 @@ const Profile = () => {
                 <Text style={styles.headingBetween}>Coaching Statistics</Text>
 
                 <View style={styles.boxContainer}>
-                    <View style={[styles.box, { backgroundColor: 'rgba(238, 247, 254, 1)' }]}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Icon name="file-outline" fill="rgba(86, 125, 244, 1)" style={styles.boxIcon} />
-                            <Icon name="more-horizontal" fill="rgba(86, 125, 244, 1)" style={styles.boxIcon} />
+                    {boxData.map((box, index) => (
+                        <View key={index} style={[styles.box, { backgroundColor: box.backgroundColor }]}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Icon name="file-remove" fill={box.iconFill} style={styles.boxIcon} />
+                                <Icon name="more-vertical-outline" fill={box.iconFill} style={{ width: 22, height: 20, marginLeft: 95 }} />
+                            </View>
+                            <Text style={[styles.boxText, { color: box.iconFill }]}>{box.title}</Text>
+                            <Text style={{ color: box.iconFill, fontSize: 8 }}>{box.subtitle}</Text>
                         </View>
-                        <Text style={[styles.boxText, { color: 'rgba(86, 125, 244, 1)' }]}>Team</Text>
-                        <Text style={{ color: 'rgba(86, 125, 244, 1)', fontSize: 8 }}>All Team Performance</Text>
-                    </View>
-                    <View style={[styles.box, { backgroundColor: 'rgba(255, 251, 236, 1)' }]}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Icon name="file-outline" fill="rgba(201, 164, 38, 1)" style={styles.boxIcon} />
-                            <Icon name="more-horizontal" fill="rgba(201, 164, 38, 1)" style={styles.boxIcon} />
-                        </View>
-
-                        <Text style={[styles.boxText, { color: 'rgba(201, 164, 38, 1)' }]}>Players</Text>
-                        <Text style={{ color: 'rgba(201, 164, 38, 1)', fontSize: 8 }}>All Players Performance</Text>
-                    </View>
+                    ))}
                 </View>
+
 
                 <View style={styles.boxContainer}>
-                    <View style={[styles.box, { backgroundColor: 'rgba(254, 238, 238, 1)' }]}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Icon name="file-outline" fill="rgba(244, 86, 86, 1)" style={styles.boxIcon} />
-                            <Icon name="more-horizontal" fill="rgba(244, 86, 86, 1)" style={styles.boxIcon} />
+                    {boxDataSecond.map((box, index) => (
+                        <View key={index} style={[styles.box, { backgroundColor: box.backgroundColor }]}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Icon name="file-remove" fill={box.iconFill} style={styles.boxIcon} />
+                                <Icon name="more-vertical-outline" fill={box.iconFill} style={{ width: 22, height: 20, marginLeft: 95 }} />
+                            </View>
+                            <Text style={[styles.boxText, { color: box.iconFill }]}>{box.title}</Text>
+                            <Text style={{ color: box.iconFill, fontSize: 8 }}>{box.subtitle}</Text>
                         </View>
-
-
-                        <Text style={[styles.boxText, { color: 'rgba(244, 86, 86, 1)' }]}>Standings</Text>
-                        <Text style={{ color: 'rgba(244, 86, 86, 1)', fontSize: 8 }}>All Standings Performance</Text>
-                    </View>
-
-                    <View style={[styles.box, { backgroundColor: 'rgba(240, 255, 255, 1)', color: 'orange' }]}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Icon name="file-outline" fill="rgba(52, 222, 222, 1)" style={styles.boxIcon} />
-                            <Icon name="more-horizontal" fill="rgba(52, 222, 222, 1)" style={styles.boxIcon} />
-                        </View>
-                        <Text style={[styles.boxText, { color: 'rgba(52, 222, 222, 1)' }]}>Depth Charts</Text>
-                        <Text style={{ color: 'rgba(52, 222, 222, 1)', fontSize: 8 }}>All Depth Charts Performance</Text>
-                    </View>
+                    ))}
                 </View>
+
 
                 {/* recent chnage */}
 
@@ -89,18 +91,20 @@ const Profile = () => {
                         <Icon name="arrow-downward-outline" fill="black" style={styles.upDownIcon} />
                     </View>
                 </View>
-                <View style={styles.recentChangesContainer}>
-                    <View style={styles.docxContainer}>
-                        <View style={styles.docxCircle}>
-                            <Icon name="file-text-outline" fill="blue" style={styles.docxIcon} />
+                {recentChangesData.map((change, index) => (
+                    <View key={index} style={styles.recentChangesContainer}>
+                        <View style={styles.docxContainer}>
+                            <View style={styles.docxCircle}>
+                                <Image source={require('../../assets/images/word.png')} style={styles.docxImage} />
+                            </View>
+                            <View style={styles.docxTextContainer}>
+                                <Text style={styles.docxName}>{change.docxName}</Text>
+                                <Text style={styles.docxTime}>{change.docxTime}</Text>
+                            </View>
                         </View>
-                        <View style={styles.docxTextContainer}>
-                            <Text style={styles.docxName}>Called for training sessions.docx</Text>
-                            <Text style={styles.docxTime}>Today's Match</Text>
-                        </View>
+                        <Text style={styles.todayMatch}>{change.time}</Text>
                     </View>
-                    <Text style={styles.todayMatch}>2 hrs</Text>
-                </View>
+                ))}
 
             </ScrollView>
 
@@ -142,7 +146,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     headingBetween: {
-        fontSize: 18,
+        fontSize: 14,
         color: 'background: rgba(65, 65, 65, 1)',
         fontWeight: 'bold',
         margin: 16,
@@ -198,9 +202,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginRight: 16,
     },
-    docxIcon: {
-        width: 32,
-        height: 32,
+    docxImage: {
+        width: 25,
+        height: 25,
     },
     docxTextContainer: {
         flexDirection: 'column',

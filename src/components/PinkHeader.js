@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Layout, Icon, Avatar } from '@ui-kitten/components';
 import DrawerNavigator from '../components/CoachDrawerNavigator';
 
-const Pinkheader = () => {
+const Pinkheader = ({name}) => {
     const [isModalVisible, setModalVisible] = useState(false);
 
     const toggleModal = () => {
@@ -27,7 +27,7 @@ const Pinkheader = () => {
                 />
                 <View style={styles.welcomeContainer}>
                     <Text style={styles.welcomeText}>Hello, Welcome</Text>
-                    <Text style={styles.username}>Billy Trucker</Text>
+                    <Text style={styles.username}>{name}</Text>
                 </View>
                 <View style={{   flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TouchableOpacity>
@@ -77,14 +77,16 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'flex-start',
         marginRight:110,
-        color:'black'
     },
     welcomeText: {
         fontSize: 18,
+        color:'white',
+        fontWeight:'300'
     },
     username: {
         fontSize: 20,
         fontWeight: 'bold',
+        color:'white'
     },
     icon: {
         width: 32,

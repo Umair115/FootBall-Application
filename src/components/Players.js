@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { Icon } from '@ui-kitten/components';
+import LinearGradient from 'react-native-linear-gradient';
 import styles from '../theme'
 
-const TopPlayers = ({ Players, viewMoreText ,rating,teamtext,playertext,image}) => {
+const TopPlayers = ({ Players, viewMoreText, rating, teamtext, playertext, image }) => {
     return (
         <>
             <View style={styles.winnerImageContainer}>
@@ -11,10 +12,14 @@ const TopPlayers = ({ Players, viewMoreText ,rating,teamtext,playertext,image}) 
                     source={image}
                     style={[styles.winnerImage, { height: 160 }]}
                 />
+                <LinearGradient
+                    colors={['transparent', 'rgba(0,0,0,0.7)']}
+                    style={[StyleSheet.absoluteFill, { borderRadius: 10 }]}
+                />
                 <View style={styles.winnerElements}>
                     <View style={styles.rightWinner}>
                         <View style={styles.ratingOval}>
-                        <Text style={styles.ovalText}>{rating}</Text>
+                            <Text style={styles.ovalText}>{rating}</Text>
                         </View>
                         <Text style={styles.winnerText}>Rank 01</Text>
                         <Text style={styles.teamText}>{teamtext}</Text>
@@ -36,6 +41,7 @@ const TopPlayers = ({ Players, viewMoreText ,rating,teamtext,playertext,image}) 
                                     source={require('../assets/images/image8.png')}
                                     style={styles.circleImage}
                                 />
+
                             </View>
                             <Text style={styles.playerName}>{fixture.playerName}</Text>
                         </View>

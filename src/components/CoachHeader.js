@@ -17,7 +17,7 @@ const renderMenuAction = (toggleModal) => (
   <TopNavigationAction icon={MenuIcon} onPress={toggleModal} />
 );
 
-const CustomHeader = ({ title, toggleModal }) => {
+const CoachHeader = ({ title, toggleModal }) => {
   return (
     <TopNavigation
       title={title}
@@ -27,4 +27,4 @@ const CustomHeader = ({ title, toggleModal }) => {
   );
 };
 
-export default CustomHeader;
+export default CoachHeader;

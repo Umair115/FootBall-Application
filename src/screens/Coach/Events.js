@@ -1,9 +1,9 @@
 import React from 'react';
-import PinkHeader from '../components/PinkHeader';
+import PinkHeader from '../../components/PinkHeader';
 import { View, Text, StyleSheet, Image ,ScrollView} from 'react-native';
 import { Layout, Icon } from '@ui-kitten/components';
-import TeamFixtures from '../components/TeamFixtures';
-import TopPlayers from '../components/Players';
+import TeamFixtures from '../../components/TeamFixtures';
+import TopPlayers from '../../components/Players';
 
 const eventsData = [
     { teamAColor: '#dda736', teamAName: 'Eagles', teamBColor: '#4461f2', teamBName: 'Fangs' },
@@ -18,7 +18,9 @@ const Events = () => {
         <ScrollView>
             <Layout style={eventStyles.container}>
 
-                <PinkHeader />
+                <PinkHeader
+                name="Billy Trucker"
+                />
                 <View style={eventStyles.content}>
                     <Text style={eventStyles.heading}>Fletl Baseball Events</Text>
                     <View style={eventStyles.secondaryInfo}>

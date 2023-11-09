@@ -3,6 +3,10 @@ import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { Icon } from '@ui-kitten/components';
 import TeamFixtures from './TeamFixtures';
 import TopPlayers from './Players';
+import LinearGradient from 'react-native-linear-gradient';
+import SeeScrollBar from './SeeScrollBar';
+import themestyles from '../../theme'
+import LinearGradientEffect from './LinearGradientEffect';
 
 const winnerData = [
   { title: 'Batting', rating: 'Rating 4.2', icon: 'bar-chart-2-outline', backgroundColor: 'white' },
@@ -29,60 +33,57 @@ const PlayersData = [
 const HomeTeamSection = () => {
   return (
     <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.contentContainer}>
-          <Text style={styles.heading}>Fletl</Text>
+      <View style={[hometeamstyles.container, hometeamstyles.shadowEffect]}>
+        <View style={hometeamstyles.contentContainer}>
+          <Text style={styles.headingTeamName}>Fletl</Text>
           <Text style={styles.teamRanking}>Team Rank</Text>
           <View style={styles.numberContainer}>
             <Text style={styles.number}>01</Text>
-            <Text style={styles.teamName}>Fletl Eagles</Text>
+            <Text style={styles.imageTeamName}>Fletl Eagles</Text>
           </View>
         </View>
         <Image
           source={require('../assets/images/image8.png')}
-          style={styles.image}
+          style={hometeamstyles.image}
           resizeMode="cover"
         />
+
       </View>
 
-      
-      <View style={styles.eventsContainer}>
-        <Text style={styles.mediumHeading}>Recent Events</Text>
-        <View style={styles.teamEventsContainer}>
-          <Text style={styles.teamEventsText}>Team Events</Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Text style={styles.seeMoreText}>See more</Text>
-            <Icon name="arrow-ios-forward-outline" style={styles.boxIcon} />
-          </View>
-        </View>
-      </View>
+
+      <SeeScrollBar
+        headingName="Recent Events"
+        teamevent="Team Events"
+      />
 
       {/* Winner image container */}
-      <View style={styles.winnerImageContainer}>
+      <View style={hometeamstyles.winnerImageContainer}>
         <Image
           source={require('../assets/images/backdrop4.png')}
-          style={styles.winnerImage}
+          style={hometeamstyles.winnerImage}
           resizeMode="cover"
         />
-        <View style={styles.winnerElements}>
+        <LinearGradientEffect/>
+        <View style={hometeamstyles.winnerElements}>
           <View style={{ flexDirection: 'column' }}>
 
             {winnerData.map((data, index) => (
-              <View key={index} style={[styles.box, { backgroundColor: data.backgroundColor }]}>
-                <View style={styles.boxContent}>
-                  <Icon name={data.icon} style={styles.boxIcon} />
-                  <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={styles.boxTitle}>{data.title}</Text>
-                    <Text style={styles.boxRating}>{data.rating}</Text>
+              <View key={index} style={[hometeamstyles.box, { backgroundColor: data.backgroundColor }]}>
+                <View style={hometeamstyles.boxContent}>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Icon name={data.icon} style={hometeamstyles.boxIcon} />
+                    <Text style={hometeamstyles.boxTitle}>{data.title}</Text>
                   </View>
+                  <Text style={hometeamstyles.boxRating}>{data.rating}</Text>
+
                 </View>
               </View>
             ))}
 
           </View>
-          <View style={styles.rightWinner}>
-            <Text style={styles.winnerText}>Winners:</Text>
-            <Text style={styles.teamText}>FLETFL EAGLES</Text>
+          <View style={hometeamstyles.rightWinner}>
+            <Text style={hometeamstyles.winnerText}>Winners:</Text>
+            <Text style={hometeamstyles.teamText}>FLETFL EAGLES</Text>
           </View>
         </View>
       </View>
@@ -92,33 +93,25 @@ const HomeTeamSection = () => {
 
       {/* blue box */}
 
-      <View style={[styles.container, { backgroundColor: '#1b85f3', height: 140 }]}>
-        <View style={[styles.contentContainer, { flex: 0.6 }]}>
-          <Text style={styles.blueBoxtext}>Training Session Alert</Text>
-          <Text style={styles.blueBoxtext}>By Coach</Text>
-          <Text style={[styles.teamEventsText, { color: 'white' }]}>For Next Upcoming Vidoes</Text>
+      <View style={[hometeamstyles.container, { backgroundColor: '#1b85f3', height: 140, elevation: 20, shadowColor: '#1b85f3' }]}>
+        <View style={[hometeamstyles.contentContainer, { flex: 0.6 }]}>
+          <Text style={hometeamstyles.blueBoxtext}>Training Session Alert</Text>
+          <Text style={hometeamstyles.blueBoxtext}>By Coach</Text>
+          <Text style={[hometeamstyles.teamEventsText, { color: 'white' }]}>For Next Upcoming Vidoes</Text>
         </View>
         <Image
           source={require('../assets/images/image8.png')}
-          style={[styles.image, { flex: 0.4 }]}
+          style={[hometeamstyles.image, { flex: 0.4 }]}
           resizeMode="cover"
         />
       </View>
 
 
       {/*  Top teams */}
-
-
-      <View style={styles.eventsContainer}>
-        <Text style={styles.mediumHeading}>Top Teams</Text>
-        <View style={styles.teamEventsContainer}>
-          <Text style={styles.teamEventsText}>Teams Ranking</Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Text style={styles.seeMoreText}>See more</Text>
-            <Icon name="arrow-ios-forward-outline" style={styles.boxIcon} />
-          </View>
-        </View>
-      </View>
+      <SeeScrollBar
+        headingName="Top Teams"
+        teamevent="Teams Ranking"
+      />
 
       <TopPlayers
         Players={TeamData}
@@ -130,18 +123,10 @@ const HomeTeamSection = () => {
       />
 
       {/* {Top Player} */}
-
-
-      <View style={styles.eventsContainer}>
-        <Text style={styles.mediumHeading}>Top Players</Text>
-        <View style={styles.teamEventsContainer}>
-          <Text style={styles.teamEventsText}>Players Ranking</Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Text style={styles.seeMoreText}>See more</Text>
-            <Icon name="arrow-ios-forward-outline" style={styles.boxIcon} />
-          </View>
-        </View>
-      </View>
+      <SeeScrollBar
+        headingName="Top Players"
+        teamevent="Players Ranking"
+      />
       <TopPlayers
         Players={PlayersData}
         viewMoreText="View Full Table"
@@ -155,7 +140,7 @@ const HomeTeamSection = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const hometeamstyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: '#c91b8c',
@@ -166,7 +151,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 16,
     marginBottom: 16,
-    elevation: 4,
+    elevation: 20
+  },
+  shadowEffect: {
+    elevation: 25,
+    shadowColor: '#c91b8c',
   },
   image: {
     flex: 0.7,
@@ -182,55 +171,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 16,
     height: 200,
-  },
-  heading: {
-    fontSize: 30,
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  teamRanking: {
-    fontSize: 23,
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  numberContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  number: {
-    fontSize: 60,
-    color: 'orange',
-    fontWeight: '900',
-  },
-  teamName: {
-    fontSize: 14,
-    color: 'white',
-    marginLeft: 8,
-  },
-  mediumHeading: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: 'black',
-  },
-  eventsContainer: {
-    padding: 16,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    marginHorizontal: 16,
-  },
-  teamEventsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 1,
-  },
-  teamEventsText: {
-    fontSize: 10,
-    color: 'black',
-  },
-  seeMoreText: {
-    fontSize: 12,
-    color: 'black',
   },
   winnerImageContainer: {
     position: 'relative',
@@ -267,13 +207,15 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   boxIcon: {
-    width: 20,
-    height: 20,
+    width: 15,
+    height: 15,
+    marginRight: 5,
   },
   boxContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
     paddingVertical: 10,
   },
   boxTitle: {
@@ -282,9 +224,9 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   boxRating: {
-    fontSize: 14,
+    fontSize: 10,
     color: 'black',
-    marginTop: 4,
+    marginTop: 2,
   },
   rightWinner: {
     flexDirection: 'column',
