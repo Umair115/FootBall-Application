@@ -36,7 +36,7 @@ export default SignupOptions = ({ navigation }) => {
       </Row>
       <Row style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center' }}>
         <Column>
-          <LinearGradientButton title="Player" onPress={() => navigation.navigate('Events')} />
+          <LinearGradientButton title="Player" onPress={() => navigation.navigate('Tablesteam')} />
         </Column>
       </Row>
     </Container>

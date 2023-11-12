@@ -20,9 +20,10 @@ const renderMenuAction = (toggleModal) => (
 const CoachHeader = ({ title, toggleModal }) => {
   return (
     <TopNavigation
-      title={title}
       accessoryLeft={renderBackAction}
       accessoryRight={renderMenuAction(toggleModal)}
+      title={title}
+      titleStyle={{ flex: 1, textAlign: 'center' }} 
     />
   );
 };

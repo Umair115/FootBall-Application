@@ -183,11 +183,13 @@ const styles = StyleSheet.create({
     },
     upDownIconContainer: {
         flexDirection: 'row',
-        marginRight: 10
+        marginRight: 16,
+        marginTop:13
     },
     upDownIcon: {
-        width: 24,
-        height: 24,
+        width: 18,
+        height: 18,
+        marginRight:-5
     },
     docxContainer: {
         flexDirection: 'row',

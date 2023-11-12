@@ -16,8 +16,8 @@ const boxDataSecond = [
 ]
 
 const recentChangesData = [
-    {  docxName: 'Called for training sessions.docx', docxTime: "Today's Match", time: '2 hrs' },
-    {  docxName: 'Called for training sessions.docx', docxTime: "Today's Match", time: '2 hrs' },
+    {  docxName: 'Called for training sessions.docx', docxTime: "Today's Match", time: '2 hrs ago' },
+    {  docxName: 'Called for training sessions.docx', docxTime: "Today's Match", time: '2 hrs ago' },
 ];
 
 const Profile = () => {
@@ -183,11 +183,13 @@ const styles = StyleSheet.create({
     },
     upDownIconContainer: {
         flexDirection: 'row',
-        marginRight: 10
+        marginRight: 16,
+        marginTop:13
     },
     upDownIcon: {
-        width: 24,
-        height: 24,
+        width: 18,
+        height: 18,
+        marginRight:-5
     },
     docxContainer: {
         flexDirection: 'row',
@@ -203,8 +205,8 @@ const styles = StyleSheet.create({
         marginRight: 16,
     },
     docxImage: {
-        width: 25,
-        height: 25,
+        width: 24,
+        height: 24,
     },
     docxTextContainer: {
         flexDirection: 'column',

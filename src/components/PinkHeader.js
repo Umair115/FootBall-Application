@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Layout, Icon, Avatar } from '@ui-kitten/components';
 import DrawerNavigator from '../components/CoachDrawerNavigator';
 
-const Pinkheader = ({name}) => {
+const Pinkheader = ({ name }) => {
     const [isModalVisible, setModalVisible] = useState(false);
 
     const toggleModal = () => {
@@ -17,7 +17,7 @@ const Pinkheader = ({name}) => {
                 source={require('../assets/images/backdrop6.png')}
                 style={styles.headerImage}
             />
-            
+
             <View style={styles.headerOverlay} />
 
             <View style={styles.avatarContainer}>
@@ -26,16 +26,17 @@ const Pinkheader = ({name}) => {
                     size="giant"
                 />
                 <View style={styles.welcomeContainer}>
-                    <Text style={styles.welcomeText}>Hello, Welcome</Text>
+                    <Text style={styles.welcomeText}>Hello, Welcome🎉</Text>
                     <Text style={styles.username}>{name}</Text>
                 </View>
-                <View style={{   flexDirection: 'row', justifyContent: 'space-between'}}>
-                <TouchableOpacity>
-                    <Icon name="bell-outline" style={styles.icon} fill='rgba(255, 255, 255, 0.7)' />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={toggleModal}>
-                    <Icon name="menu-outline" style={styles.icon} fill='rgba(255, 255, 255, 0.7)'/>
-                </TouchableOpacity>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <TouchableOpacity style={styles.iconContainer}>
+                        <Icon name="bell-outline" style={styles.icon} fill='rgba(255, 255, 255, 0.7)' />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  style={styles.iconContainer} onPress={toggleModal}>
+                        <Icon name="menu-outline" style={styles.icon} fill='rgba(255, 255, 255, 0.7)' />
+                    </TouchableOpacity>
                 </View>
             </View>
 
@@ -47,7 +48,7 @@ const Pinkheader = ({name}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1, 
+        flex: 1,
     },
     headerImage: {
         width: '100%',
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         backgroundColor: '#c91b8c',
         opacity: 0.8,
-        height:120,
+        height: 120,
     },
     avatarContainer: {
         flexDirection: 'row',
@@ -76,21 +77,29 @@ const styles = StyleSheet.create({
     welcomeContainer: {
         flexDirection: 'column',
         alignItems: 'flex-start',
-        marginRight:110,
+        marginRight: 110,
     },
     welcomeText: {
-        fontSize: 18,
-        color:'white',
-        fontWeight:'300'
+        fontSize: 15,
+        color: 'white',
+        fontWeight: '300'
+    },
+    iconContainer: {
+        backgroundColor: 'transparent',
+        borderColor:'grey',
+        borderRadius: 7,
+        padding: 1,
+        borderWidth: 0.8,
+        marginRight:5
     },
     username: {
         fontSize: 20,
         fontWeight: 'bold',
-        color:'white'
+        color: 'white'
     },
     icon: {
-        width: 32,
-        height: 32,
+        width: 24,
+        height: 24,
     },
 });
 
