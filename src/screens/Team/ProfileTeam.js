@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Text, TouchableOpacity, profileSteamtyleheet, ScrollView, Image, StyleSheet } from 'react-native';
 import { Layout, Avatar, Icon } from '@ui-kitten/components';
-import TeamHeader from '../../components/TeamHeader';
+import SimpleHeader from '../../components/SimpleHeader';
 import TeamDrawerNavigator from '../../components/TeamDrawerNavigator'
-
+import UpdownArrow from '../../components/UpdownArrow';
 
 const boxData = [
     { backgroundColor: 'rgba(238, 247, 254, 1)', iconFill: 'rgba(86, 125, 244, 1)', title: 'Peformance', subtitle: 'All Season Performance' },
-    { backgroundColor: 'rgba(255, 251, 236, 1)', iconFill: 'rgba(201, 164, 38, 1)', title: 'Eagles Roaster', subtitle: 'All Standings Roaster List' },
+    { backgroundColor: 'rgba(255, 251, 236, 1)', iconFill: '#F3C939', title: 'Eagles Roaster', subtitle: 'All Standings Roaster List' },
 ]
 
 const boxDataSecond = [
@@ -16,8 +16,8 @@ const boxDataSecond = [
 ]
 
 const recentChangesData = [
-    {  docxName: 'Called for training sessions.docx', docxTime: "For Upcoming Match", time: '2 hrs' },
-    {  docxName: 'Called for training sessions.docx', docxTime: "For Upcoming Match", time: '4 hrs' },
+    { docxName: 'Called for training sessions.docx', docxTime: "For Upcoming Match", time: '2 hrs' },
+    { docxName: 'Called for training sessions.docx', docxTime: "For Upcoming Match", time: '4 hrs' },
 ];
 
 const ProfileTeam = () => {
@@ -28,20 +28,39 @@ const ProfileTeam = () => {
     };
 
     return (
-        <Layout style={styles.container}>
-            <TeamHeader title="My Profile" toggleModal={toggleModal} />
+        <Layout style={profileSteamtyle.container}>
+            <SimpleHeader title="My Profile" toggleModal={toggleModal} />
 
             <ScrollView>
                 {/* User Information Box */}
-                <View style={styles.userInfoContainer}>
-                    <View style={styles.userInfoBox}>
-                        <Avatar
-                            source={require('../../assets/images/avatar.png')}
-                            size="giant"
-                        />
-                        <Text style={styles.username}>FLETL Eagles</Text>
+                <View style={profileSteamtyle.userInfoContainer}>
+                    <View style={profileSteamtyle.userInfoBox}>
+                        <View style={profileSteamtyle.avatarContainer}>
+                            <View style={profileSteamtyle.avatarBox}>
+                                {/* Pink circle */}
+                                <View style={profileSteamtyle.pinkCircle} />
+
+                                {/* Edit pencil icon */}
+                                <TouchableOpacity style={profileSteamtyle.editIconContainer}>
+                                    <Icon name="edit-2-outline" fill="#fff" style={profileSteamtyle.editIcon} />
+                                </TouchableOpacity>
+
+                                {/* Avatar */}
+                                <Avatar
+                                    source={require('../../assets/images/avatar.png')}
+                                    size="giant"
+                                    style={profileSteamtyle.avatar}
+                                />
+
+                                {/* Curved small team text */}
+                                <View style={profileSteamtyle.curvedTextContainer}>
+                                    <Text style={profileSteamtyle.curvedText}>Team</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <Text style={styles.headerUsername}>FLETL Eagles</Text>
                         <Text style={styles.userDesignation}>Team</Text>
-                        <Text style={styles.userInfoText}>
+                        <Text style={profileSteamtyle.userInfoText}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium,
                             purus vel elementum venenatis, justo mauris facilisis ante, in volutpat
                             justo libero quis lectus.
@@ -52,28 +71,28 @@ const ProfileTeam = () => {
 
                 <Text style={styles.headingBetween}>Team Statistics</Text>
 
-                <View style={styles.boxContainer}>
+                <View style={profileSteamtyle.boxContainer}>
                     {boxData.map((box, index) => (
-                        <View key={index} style={[styles.box, { backgroundColor: box.backgroundColor }]}>
+                        <View key={index} style={[profileSteamtyle.box, { backgroundColor: box.backgroundColor }]}>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <Icon name="file-remove" fill={box.iconFill} style={styles.boxIcon} />
+                                <Icon name="file-remove" fill={box.iconFill} style={profileSteamtyle.boxIcon} />
                                 <Icon name="more-vertical-outline" fill={box.iconFill} style={{ width: 22, height: 20, marginLeft: 95 }} />
                             </View>
-                            <Text style={[styles.boxText, { color: box.iconFill }]}>{box.title}</Text>
+                            <Text style={[profileSteamtyle.boxText, { color: box.iconFill }]}>{box.title}</Text>
                             <Text style={{ color: box.iconFill, fontSize: 8 }}>{box.subtitle}</Text>
                         </View>
                     ))}
                 </View>
 
 
-                <View style={styles.boxContainer}>
+                <View style={profileSteamtyle.boxContainer}>
                     {boxDataSecond.map((box, index) => (
-                        <View key={index} style={[styles.box, { backgroundColor: box.backgroundColor }]}>
+                        <View key={index} style={[profileSteamtyle.box, { backgroundColor: box.backgroundColor }]}>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <Icon name="file-remove" fill={box.iconFill} style={styles.boxIcon} />
+                                <Icon name="file-remove" fill={box.iconFill} style={profileSteamtyle.boxIcon} />
                                 <Icon name="more-vertical-outline" fill={box.iconFill} style={{ width: 22, height: 20, marginLeft: 95 }} />
                             </View>
-                            <Text style={[styles.boxText, { color: box.iconFill }]}>{box.title}</Text>
+                            <Text style={[profileSteamtyle.boxText, { color: box.iconFill }]}>{box.title}</Text>
                             <Text style={{ color: box.iconFill, fontSize: 8 }}>{box.subtitle}</Text>
                         </View>
                     ))}
@@ -82,27 +101,20 @@ const ProfileTeam = () => {
 
                 {/* recent chnage */}
 
+                <UpdownArrow name="Recent Changes" />
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={styles.headingBetween}>Recent Changes</Text>
-
-                    <View style={styles.upDownIconContainer}>
-                        <Icon name="arrow-upward-outline" fill="black" style={styles.upDownIcon} />
-                        <Icon name="arrow-downward-outline" fill="black" style={styles.upDownIcon} />
-                    </View>
-                </View>
                 {recentChangesData.map((change, index) => (
-                    <View key={index} style={styles.recentChangesContainer}>
-                        <View style={styles.docxContainer}>
-                            <View style={styles.docxCircle}>
-                                <Image source={require('../../assets/images/word.png')} style={styles.docxImage} />
+                    <View key={index} style={profileSteamtyle.recentChangesContainer}>
+                        <View style={profileSteamtyle.docxContainer}>
+                            <View style={profileSteamtyle.docxCircle}>
+                                <Image source={require('../../assets/images/word.png')} style={profileSteamtyle.docxImage} />
                             </View>
-                            <View style={styles.docxTextContainer}>
-                                <Text style={styles.docxName}>{change.docxName}</Text>
-                                <Text style={styles.docxTime}>{change.docxTime}</Text>
+                            <View style={profileSteamtyle.docxTextContainer}>
+                                <Text style={profileSteamtyle.docxName}>{change.docxName}</Text>
+                                <Text style={profileSteamtyle.docxTime}>{change.docxTime}</Text>
                             </View>
                         </View>
-                        <Text style={styles.todayMatch}>{change.time}</Text>
+                        <Text style={profileSteamtyle.todayMatch}>{change.time}</Text>
                     </View>
                 ))}
 
@@ -114,7 +126,7 @@ const ProfileTeam = () => {
     );
 };
 
-const styles = StyleSheet.create({
+const profileSteamtyle = StyleSheet.create({
     container: {
         flex: 1,
     },
@@ -132,24 +144,10 @@ const styles = StyleSheet.create({
         width: '85%',
         elevation: 3,
     },
-    username: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginTop: 8,
-    },
-    userDesignation: {
-        fontSize: 18,
-        marginBottom: 8,
-    },
     userInfoText: {
         fontSize: 10,
         textAlign: 'center',
-    },
-    headingBetween: {
-        fontSize: 14,
-        color: 'background: rgba(65, 65, 65, 1)',
-        fontWeight: 'bold',
-        margin: 16,
+        marginTop: 8,
     },
     boxContainer: {
         flexDirection: 'row',
@@ -181,16 +179,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 16,
         marginVertical: 8,
     },
-    upDownIconContainer: {
-        flexDirection: 'row',
-        marginRight: 16,
-        marginTop:13
-    },
-    upDownIcon: {
-        width: 18,
-        height: 18,
-        marginRight:-5
-    },
     docxContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -206,26 +194,70 @@ const styles = StyleSheet.create({
     },
     docxImage: {
         width: 25,
-        height: 25,
+        height: 23,
     },
     docxTextContainer: {
         flexDirection: 'column',
     },
     docxName: {
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: 'bold',
-        color: 'rgba(65, 65, 65, 1)'
+        color: '#414141'
     },
     docxTime: {
         fontSize: 10,
-        color: 'grey',
+        color: '#828282',
     },
     todayMatch: {
         fontSize: 10,
-        color: 'grey',
-        fontWeight: 'bold',
+        color: '#828282',
+        fontWeight: '400',
         margin: 16,
     },
+    avatarContainer: {
+        alignItems: 'center',
+    },
+    avatarBox: {
+        position: 'relative',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    pinkCircle: {
+        position: 'absolute',
+        width: 17,
+        height: 17,
+        borderRadius: 20,
+        backgroundColor: '#c91b8c',
+        bottom: 0,
+        right: -5,
+    },
+    editIconContainer: {
+        position: 'absolute',
+        top: 41,
+        right: -2,
+    },
+    editIcon: {
+        width: 12,
+        height: 12,
+    },
+    avatar: {
+        zIndex: -1,
+    },
+    curvedTextContainer: {
+        position: 'absolute',
+        top: -3,
+        left: 40,
+        paddingHorizontal: 5,
+        paddingVertical: 1,
+        backgroundColor: 'rgba(4, 201, 47, 1)',
+        borderRadius: 5,
+    },
+    curvedText: {
+        color: 'rgba(255, 255, 255, 1)',
+        fontSize: 10,
+        fontWeight: 'medium',
+    },
+
 
 
 });

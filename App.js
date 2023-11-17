@@ -28,6 +28,11 @@ import HomeTeam from './src/screens/Team/HomeTeam';
 import TeamEvents from './src/screens/Team/TeamEvents';
 import Tablesteam from './src/screens/Team/Tablesteam';
 import TeamDrawerNavigator from './src/components/TeamDrawerNavigator';
+import History from './src/screens/Coach/History';
+import Stats from './src/screens/Coach/Stats';
+import HistoryTeam from './src/screens/Team/HistoryTeam';
+import StatsTeam from './src/screens/Team/StatsTeam';
+import Discoverplayer from './src/screens/Team/Discoverplayer';
 
 
 const Stack = createNativeStackNavigator();
@@ -77,12 +82,17 @@ function App() {
             <Stack.Screen name="Homecoach" component={HomeCoach} options={{ headerShown: false }} />
             <Stack.Screen name="Events" component={Events} options={{ headerShown: false }} />
             <Stack.Screen name="Table" component={Table} options={{ headerShown: false }} />
+            <Stack.Screen name="History" component={History} options={{headerShown:false}}/>
+            <Stack.Screen name="Stats" component={Stats} options={{headerShown:false}}/>
 
             {/* table */}
             <Stack.Screen name="Profileteam" component={ProfileTeam} options={{ headerShown: false }} />
             <Stack.Screen name="Hometeam" component={HomeTeam} options={{ headerShown: false }} />
             <Stack.Screen name="Teamevents" component={TeamEvents} options={{ headerShown: false }} />
             <Stack.Screen name="Tablesteam" component={Tablesteam} options={{ headerShown: false }} />
+            <Stack.Screen name="Historyteam" component={HistoryTeam} options={{headerShown:false}}/>
+            <Stack.Screen name="statsTeam" component={StatsTeam} options={{headerShown:false}}/>
+            <Stack.Screen name='Discoverplayer' component={Discoverplayer} options={{headerShown:false}}/>
 
 
           </Stack.Navigator>

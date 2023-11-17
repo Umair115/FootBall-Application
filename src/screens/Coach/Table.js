@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PinkHeader from '../../components/PinkHeader';
 import { View, Text, StyleSheet, Image, ScrollView, Dimensions } from 'react-native';
 import { Layout, Icon } from '@ui-kitten/components';
@@ -7,6 +7,7 @@ import styles from '../../theme'
 import SeeScrollBar from '../../components/SeeScrollBar';
 import LinearGradient from 'react-native-linear-gradient';
 import LinearGradientEffect from '../../components/LinearGradientEffect';
+import CoachDrawerNavigator from '../../components/CoachDrawerNavigator'
 
 const statsTableData = [
     { mediumHeading: 'Season Stats ', teamEvent: 'All your details in a single place  ' },
@@ -33,7 +34,11 @@ const CoachData = [
 ]
 
 const Tables = () => {
+    const [isModalVisible, setModalVisible] = useState(false);
 
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
     const imageWidth = Dimensions.get('window').width * 0.44;
 
 
@@ -43,6 +48,7 @@ const Tables = () => {
 
                 <PinkHeader
                     name="Billy Trucker"
+                    toggleModal={toggleModal}
                 />
                 <View style={eventStyles.content}>
                     <Text style={eventStyles.heading}>Fletl Baseball Events</Text>
@@ -172,6 +178,10 @@ const Tables = () => {
                     playertext="FLETFL EAGLES"
                     image={require('../../assets/images/backdrop5.png')}
                 />
+
+
+                {/* Modal */}
+                <CoachDrawerNavigator isVisible={isModalVisible} closeModal={toggleModal} />
 
             </Layout>
         </ScrollView>

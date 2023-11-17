@@ -106,8 +106,8 @@ export default styles = StyleSheet.create({
         position: 'absolute',
         margin: 0,
         width: '75%',
-        flexDirection:'column',
-        justifyContent:'space-between',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         backgroundColor: 'rgba(238, 247, 254, 1)',
         height: '100%',
     },
@@ -136,10 +136,10 @@ export default styles = StyleSheet.create({
     },
     modalContent: {
         padding: 16,
-        marginLeft:10,
+        marginLeft: 10,
     },
-    navigationModal:{
-        marginBottom:15,
+    navigationModal: {
+        marginBottom: 15,
     },
     modalFooter: {
         flexDirection: 'row',
@@ -148,7 +148,7 @@ export default styles = StyleSheet.create({
     },
     logoutText: {
         fontSize: 18,
-        marginLeft:5
+        marginLeft: 5
     },
 
     teamFixture: {
@@ -197,7 +197,7 @@ export default styles = StyleSheet.create({
         color: 'black',
         fontWeight: '500',
         marginLeft: 6,
-        marginRight:6
+        marginRight: 6
     },
     playerName: {
         fontSize: 16,
@@ -271,46 +271,53 @@ export default styles = StyleSheet.create({
         fontWeight: '500'
     },
     headingTeamName: {
-        fontSize: 30,
-        color: 'white',
-        fontWeight: 'bold',
-      },
-      teamRanking: {
-        fontSize: 23,
-        color: 'white',
-        fontWeight: 'bold',
-      },
-      numberContainer: {
+        fontSize: 38,
+        fontWeight: '400',
+        fontWeight:'bold',
+        color: 'rgba(255, 255, 255, 1)',
+        fontFamily: 'Gilroy-ExtraBold',
+    },
+    teamRanking: {
+        fontFamily: 'Gilroy-ExtraBold',
+        fontSize: 20,
+        fontWeight: '400',
+        fontWeight:'bold',
+        color: 'rgba(255, 255, 255, 1)',
+    },
+    numberContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-      },
-      number: {
-        fontSize: 60,
+    },
+    number: {
+        fontSize: 70,
         color: 'orange',
-        fontWeight: '900',
-        marginTop:-12
-      },
-      imageTeamName: {
-        fontSize: 14,
+        fontWeight: '800',
+        marginTop: -12
+    },
+    imageTeamName: {
+        fontSize: 15,
         color: 'white',
+        fontWeight:'400',
+        fontWeight:'bold',
         marginLeft: 8,
-        marginTop:30
-      },
-      statsBox: {
+        marginTop: 30
+    },
+    statsBox: {
         borderRadius: 10, // Curved corners
         backgroundColor: 'white', // Background color of the box
         padding: 16, // Padding inside the box
         shadowColor: 'black', // Shadow color
-        shadowOffset: { width: 0, height: 2 }, 
+        shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
         elevation: 5,
-        marginHorizontal:16,
-        marginBottom:10
-      },
-      mediumHeading: {
-        fontSize: 18,
-        fontWeight: '500',
-        color: 'black',
+        marginHorizontal: 16,
+        marginBottom: 10
+    },
+    mediumHeading: {
+        fontSize: 16,
+        fontWeight: '700',
+        fontFamily:'Plus Jakarta Sans',
+        color: 'rgba(57, 67, 79, 1)',
     },
     eventsContainer: {
         padding: 16,
@@ -325,17 +332,117 @@ export default styles = StyleSheet.create({
         marginTop: 1,
     },
     teamEventsText: {
-        fontSize: 10,
-        color: 'black',
+        fontSize: 13,
+        color: 'rgba(65, 65, 65, 1)',
+        fontWeight:'400'
     },
     seeMoreText: {
         fontSize: 12,
-        color: 'black',
+        fontWeight:400,
+        color: 'rgba(65, 65, 65, 1)',
     },
     boxIcon: {
-        width: 20,
-        height: 20,
+        width: 16,
+        height: 16,
     },
+    headerUsername: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginTop: 5,
+        color:'#383838'
+    },
+    userDesignation: {
+        fontSize: 17,
+        color:'#5E5E5E'
+    },
+    headingBetween: {
+        fontSize: 14,
+        color:'#414141',
+        fontWeight: '400',
+        margin: 16,
+    },
+    historyHeading:{
+        fontSize:19,
+        textAlign:'center',
+        color:'#414141',
+        marginTop:20,
+        marginBottom:20,
+        fontWeight:'500'
+    },
+    historyContainer:{
+        backgroundColor:'white',
+        justifyContent:'space-between'
+    },
+    historyBox: {
+        backgroundColor: '#EEF7FE',
+        borderRadius: 10,
+        margin:16,
+        padding: 16,
+        elevation: 3,
+        height:100,
+        justifyContent:'center'
+    },
+    historyboxIcon: {
+        width: 32,
+        height: 32,
+    },
+    historyboxText: {
+        fontSize: 19,
+        fontWeight: '500',
+        color:'#567DF4'
+    },
+    statsContainer:{
+        backgroundColor:'white',
+        borderRadius:70,
+        margin:16,
+        padding:16,
+        flexDirection:'column',
+        alignItems:'center',
+    },
+    progressContainer:{
+        fontSize:18,
+        color: '#585757',
+        marginVertical:10
+    },
+    progressPercentage:{
+        color:'#414141',
+        fontSize:23,
+        fontWeight:'bold'
+    },
+    teamBattingText: {
+        fontSize: 17,
+        fontWeight: 'medium',
+        marginRight: 35,
+        color: '#373737',
+      },
+      searchSection:{
+            padding:16,
+            backgroundColor:'white',
+            color:'rgba(60, 60, 67, 0.6)',
+      },
+      searchBar:{
+        alignItems:'center',
+        borderRadius:10,
+        backgroundColor:'rgba(118, 118, 128, 0.12)',  
+      },
+      all:{
+        color:'rgba(255, 149, 0, 1)',
+        fontSize:14,
+        fontWeight:'500'
+      },
+      discoverBox:{
+        backgroundColor: 'white',
+        borderRadius: 10,
+        margin:16,
+        padding: 16,
+        elevation: 3,
+        justifyContent:'center'
+      },
+      discoverBoxText:{
+        fontSize: 15,
+        fontWeight: '500',
+        color:'rgba(72, 72, 74, 1)',
+      }
 });
 
 export const secondaryButtonGradient = {

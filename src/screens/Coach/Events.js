@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PinkHeader from '../../components/PinkHeader';
-import { View, Text, StyleSheet, Image ,ScrollView} from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { Layout, Icon } from '@ui-kitten/components';
 import TeamFixtures from '../../components/TeamFixtures';
 import TopPlayers from '../../components/Players';
+import CoachDrawerNavigator from '../../components/CoachDrawerNavigator'
 
 const eventsData = [
     { teamAColor: '#dda736', teamAName: 'Eagles', teamBColor: '#4461f2', teamBName: 'Fangs' },
@@ -14,12 +15,18 @@ const eventsData = [
 
 
 const Events = () => {
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
     return (
         <ScrollView>
             <Layout style={eventStyles.container}>
 
                 <PinkHeader
-                name="Billy Trucker"
+                    name="Billy Trucker"
+                    toggleModal={toggleModal}
                 />
                 <View style={eventStyles.content}>
                     <Text style={eventStyles.heading}>Fletl Baseball Events</Text>
@@ -38,6 +45,8 @@ const Events = () => {
 
                 <TeamFixtures fixtures={eventsData} viewMoreText="View More Events" />
 
+                {/* Modal */}
+                <CoachDrawerNavigator isVisible={isModalVisible} closeModal={toggleModal} />
             </Layout>
         </ScrollView>
     );

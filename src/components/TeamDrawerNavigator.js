@@ -6,7 +6,12 @@ import styles from '../theme'
 
 const TeamDrawerNavigator = ({ isVisible, closeModal, navigation }) => {
     return (
-        <Modal isVisible={isVisible} style={styles.modal}>
+        <Modal
+        isVisible={isVisible}
+        style={[styles.modal, { marginLeft: 0, marginRight: '25%' }]}
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
+    >
             {/* Top part of the modal with curved background */}
             <View style={styles.modalTop}>
                 <View style={styles.modalHeader}>

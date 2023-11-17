@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
-import { Icon } from '@ui-kitten/components';
+import { Icon, Layout } from '@ui-kitten/components';
 import TeamFixtures from './TeamFixtures';
 import TopPlayers from './Players';
 import LinearGradient from 'react-native-linear-gradient';
@@ -32,18 +32,20 @@ const PlayersData = [
 
 const HomeTeamSection = () => {
   return (
-    <ScrollView>
+    <Layout style={{borderTopLeftRadius:40,borderTopRightRadius:40}}>  
+       <ScrollView >
       <View style={[hometeamstyles.container, hometeamstyles.shadowEffect]}>
         <View style={hometeamstyles.contentContainer}>
-          <Text style={styles.headingTeamName}>Fletl</Text>
+          <Text style={styles.headingTeamName}>FLETL</Text>
           <Text style={styles.teamRanking}>Team Rank</Text>
           <View style={styles.numberContainer}>
+            
             <Text style={styles.number}>01</Text>
-            <Text style={styles.imageTeamName}>Fletl Eagles</Text>
+            <Text style={styles.imageTeamName}>FLETL Eagles</Text>
           </View>
         </View>
         <Image
-          source={require('../assets/images/image8.png')}
+          source={require('../assets/images/imageFlorida.png')}
           style={hometeamstyles.image}
           resizeMode="cover"
         />
@@ -135,16 +137,18 @@ const HomeTeamSection = () => {
         playertext="FLETFL EAGLES"
         image={require('../assets/images/backdrop5.png')}
       />
-
     </ScrollView>
+    </Layout>
+ 
   );
 };
 
 const hometeamstyles = StyleSheet.create({
+
   container: {
     flexDirection: 'row',
     backgroundColor: '#c91b8c',
-    borderRadius: 10,
+    borderRadius: 15,
     padding: 2,
     height: 160,
     alignItems: 'center',
@@ -158,16 +162,14 @@ const hometeamstyles = StyleSheet.create({
     shadowColor: '#c91b8c',
   },
   image: {
-    flex: 0.7,
-    aspectRatio: 0.9,
-    resizeMode: 'contain',
+    flex: 0.6,
+    aspectRatio: 1.17,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 250,
   },
 
   contentContainer: {
-    flex: 0.6,
+    flex: 0.5,
     justifyContent: 'center',
     padding: 16,
     height: 200,
@@ -219,13 +221,14 @@ const hometeamstyles = StyleSheet.create({
     paddingVertical: 10,
   },
   boxTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'black',
+    fontSize: 12,
+    color: 'rgba(65, 65, 65, 1)',
+    fontWeight:'700',
   },
   boxRating: {
     fontSize: 10,
-    color: 'black',
+    color: 'rgba(96, 104, 115, 1)',
+    fontWeight:'500',
     marginTop: 2,
   },
   rightWinner: {
@@ -239,7 +242,7 @@ const hometeamstyles = StyleSheet.create({
   winnerText: {
     fontSize: 20,
     color: '#48cf5c',
-    fontWeight: '900',
+    fontWeight: '700',
   },
   teamText: {
     fontSize: 20,
