@@ -79,8 +79,8 @@ const Tablesteam = () => {
                             <Text style={styles.headingTeamName}>Fletl</Text>
                             <Text style={styles.teamRanking}>TOP PLAYER</Text>
                             <View style={styles.numberContainer}>
-                                <Text style={styles.number}>Luiz</Text>
-                                <Text style={[styles.imageTeamName, { fontWeight: '500', marginBottom: 10 }]}>Eagles</Text>
+                                <Text style={[styles.number,{fontSize:55}]}>Luiz</Text>
+                                <Text style={[styles.imageTeamName, { fontWeight: '500', marginBottom: 15 }]}>Eagles</Text>
                             </View>
                         </View>
                     </View>
@@ -97,7 +97,7 @@ const Tablesteam = () => {
                             <Text style={styles.headingTeamName}>Fletl</Text>
                             <Text style={styles.teamRanking}>TOP TEAM</Text>
                             <View style={styles.numberContainer}>
-                                <Text style={[styles.number, { fontSize: 30 }]}>Eagles</Text>
+                                <Text style={[styles.number, { fontSize: 28 }]}>Eagles</Text>
                             </View>
                         </View>
                         <View>

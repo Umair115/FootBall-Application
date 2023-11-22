@@ -15,10 +15,10 @@ const History = () => {
 
 
   const coachingHistoryData = [
-    { teamName: 'FLETL Fox', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
-    { teamName: 'FLETL Legends', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
-    { teamName: 'FLETL Hammers', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
-    { teamName: 'FLETL Eagles', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
+    { id:1,teamName: 'FLETL Fox', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
+    { id:2,teamName: 'FLETL Legends', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
+    { id:3,teamName: 'FLETL Hammers', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
+    { id:4,teamName: 'FLETL Eagles', performance: 'All Team Performance', image: require('../../assets/images/image8.png') },
   ];
 
   return (
@@ -55,7 +55,7 @@ const History = () => {
           {/* post coaching teams */}
           <UpdownArrow name='Past Coaching Teams' />
           {coachingHistoryData.map((history, index) => (
-            <View key={index} style={[styles.historyBox, { backgroundColor: '#FEEEEE' }]}>
+            <View key={history.id} style={[styles.historyBox, { backgroundColor: '#FEEEEE' }]}>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Image
                   source={history.image}

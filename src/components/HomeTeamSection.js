@@ -32,8 +32,9 @@ const PlayersData = [
 
 const HomeTeamSection = () => {
   return (
-    <Layout style={{borderTopLeftRadius:40,borderTopRightRadius:40}}>  
-       <ScrollView >
+    <ScrollView >
+    <Layout >  
+      
       <View style={[hometeamstyles.container, hometeamstyles.shadowEffect]}>
         <View style={hometeamstyles.contentContainer}>
           <Text style={styles.headingTeamName}>FLETL</Text>
@@ -137,14 +138,14 @@ const HomeTeamSection = () => {
         playertext="FLETFL EAGLES"
         image={require('../assets/images/backdrop5.png')}
       />
-    </ScrollView>
+
     </Layout>
+    </ScrollView>
  
   );
 };
 
 const hometeamstyles = StyleSheet.create({
-
   container: {
     flexDirection: 'row',
     backgroundColor: '#c91b8c',

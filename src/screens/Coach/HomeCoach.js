@@ -19,9 +19,7 @@ const HomeCoach = () => {
                 name="Billy Trucker"
                 toggleModal={toggleModal}
             />
-            <View style={styles.homeContainer}>
             <HomeSection />
-            </View>
                 {/* Modal */}
                 <CoachDrawerNavigator isVisible={isModalVisible} closeModal={toggleModal} />
         </Layout>
@@ -35,10 +33,6 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
     },
-    homeContainer:{
-
-        // backgroundColor:'red'
-      },
 });
 
 export default HomeCoach;

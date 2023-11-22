@@ -3,8 +3,12 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Icon, Avatar } from '@ui-kitten/components';
 import Modal from 'react-native-modal';
 import styles from '../theme'
+import { useNavigation } from '@react-navigation/native';
 
-const TeamDrawerNavigator = ({ isVisible, closeModal, navigation }) => {
+const TeamDrawerNavigator = ({ isVisible, closeModal }) => {
+   
+    const navigation=useNavigation()
+
     return (
         <Modal
         isVisible={isVisible}
@@ -31,9 +35,9 @@ const TeamDrawerNavigator = ({ isVisible, closeModal, navigation }) => {
                 <Text onPress={() => navigation.navigate('Hometeam')} style={styles.navigationModal} >Home</Text>
                 <Text style={styles.navigationModal}>Account</Text>
                 <Text onPress={() => navigation.navigate('Profileteam')} style={styles.navigationModal}>Profile</Text>
-                <Text style={styles.navigationModal}>History</Text>
-                <Text style={styles.navigationModal}>Stats</Text>
-                <Text style={styles.navigationModal}>Disvover Player</Text>
+                <Text  onPress={() => navigation.navigate('Historyteam')} style={styles.navigationModal}>History</Text>
+                <Text onPress={() => navigation.navigate('statsTeam')} style={styles.navigationModal}>Stats</Text>
+                <Text onPress={() => navigation.navigate('Discoverplayer')} style={styles.navigationModal}>Disvover Player</Text>
                 <Text style={styles.navigationModal}>Team Roatser</Text>
                 <Text style={styles.navigationModal}>List of Coaches</Text>
                 <Text onPress={() => navigation.navigate('Teamevents')} style={styles.navigationModal} >Events</Text>

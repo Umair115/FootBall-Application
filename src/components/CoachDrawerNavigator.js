@@ -3,8 +3,10 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Icon, Avatar } from '@ui-kitten/components';
 import Modal from 'react-native-modal';
 import styles from '../theme'
+import { useNavigation } from '@react-navigation/native';
 
-const DrawerNavigator = ({ isVisible, closeModal, navigation }) => {
+const DrawerNavigator = ({ isVisible, closeModal }) => {
+    const navigation=useNavigation()
     return (
         <Modal
             isVisible={isVisible}
@@ -31,9 +33,9 @@ const DrawerNavigator = ({ isVisible, closeModal, navigation }) => {
                 <Text onPress={() => navigation.navigate('Homecoach')} style={styles.navigationModal} >Home</Text>
                 <Text style={styles.navigationModal}>Account</Text>
                 <Text onPress={() => navigation.navigate('Profile')} style={styles.navigationModal}>Profile</Text>
-                <Text style={styles.navigationModal}>History</Text>
-                <Text style={styles.navigationModal}>Stats</Text>
-                <Text style={styles.navigationModal}>Team</Text>
+                <Text onPress={() => navigation.navigate('History')} style={styles.navigationModal}>History</Text>
+                <Text onPress={() => navigation.navigate('Stats')}  style={styles.navigationModal}>Stats</Text>
+                <Text onPress={()=>navigation.navigate('Table')} style={styles.navigationModal}>Table</Text>
                 <Text style={styles.navigationModal}>Setting</Text>
                 <Text style={styles.navigationModal}>Help</Text>
 

@@ -21,12 +21,12 @@ export default SignupOptions = ({ navigation }) => {
       </Row>
       <Row style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center' }}>
         <Column>
-          <LinearGradientButton title="Coach" onPress={() => navigation.navigate('Profile')} />
+          <LinearGradientButton title="Coach" onPress={() => navigation.navigate('Homecoach')} />
         </Column>
       </Row>
       <Row style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center' }}>
         <Column>
-          <LinearGradientButton title="Team" onPress={() => navigation.navigate('Profileteam')} />
+          <LinearGradientButton title="Team" onPress={() => navigation.navigate('Hometeam')} />
         </Column>
       </Row>
       <Row style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center' }}>

@@ -338,7 +338,7 @@ export default styles = StyleSheet.create({
     },
     seeMoreText: {
         fontSize: 12,
-        fontWeight:400,
+        fontWeight:'400',
         color: 'rgba(65, 65, 65, 1)',
     },
     boxIcon: {
